@@ -58,10 +58,10 @@ const createElement = (block, entityMap) => {
       return <h2>{withEntities ? textWithEntities : text}</h2>;
       break;
     case BLOCK_TYPE.ULIST:
-      return <ul>{createListElements(items, entityMap)}</ul>;
+      return <ul>{createListElements(items)}</ul>;
       break;
     case BLOCK_TYPE.OLIST:
-      return <ol>{createListElements(items, entityMap)}</ol>;
+      return <ol>{createListElements(items)}</ol>;
       break;
     default:
       return "";
@@ -69,7 +69,7 @@ const createElement = (block, entityMap) => {
   }
 };
 
-const createListElements = (items, entityMap) => {
+const createListElements = items => {
   const list = items.reduce((elements, item) => {
     elements += jsxToString(<li>{item.text}</li>);
     return elements;
