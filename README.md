@@ -1,5 +1,7 @@
 # DraftJs Raw JSON to HTML String
 
+[![Build Status](https://travis-ci.org/vanclp/draft-json-to-html.svg?branch=master)](https://travis-ci.org/vanclp/draft-json-to-html)
+
 This changes DraftJS raw json data to a simple HTML string. This can handle the
 JSON provided from the tasks listed
 [here](https://github.com/steveliles/draft-js-conversion-test)
