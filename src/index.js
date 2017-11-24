@@ -4,7 +4,6 @@ import { BLOCK_TYPE, ENTITY_TYPE, ENTITY } from "./constants";
 const { Mention, Link } = ENTITY;
 
 const formatBlocks = blocks => {
-  //format list data
   return blocks.reduce((content, block) => {
     const { type, ...properties } = block;
     let counter = 0;
@@ -98,13 +97,13 @@ const applyEntities = (entityMap, entityRanges, text) => {
 
 const draftJsToHtml = json => {
   if (!json) {
-    return ""; //check if input is correct
+    return ""; //check if there is an input
   }
   const { blocks, entityMap } = json;
   if (blocks.length < 1) {
     return ""; //return blank string if no blocks available
   }
-  const formattedBlocks = formatBlocks(blocks);
+  const formattedBlocks = formatBlocks(blocks); //format list elements
   const article = buildArticle(formattedBlocks, entityMap);
   return jsxToString(article);
 };
