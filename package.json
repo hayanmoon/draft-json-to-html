@@ -1,5 +1,5 @@
 {
-  "name": "drajtconversion",
+  "name": "draft-json-to-html",
   "version": "1.0.0",
   "description": "Convert Draftjs Json to HTML/JSX",
   "main": "build/index.js",

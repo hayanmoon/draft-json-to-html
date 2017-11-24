@@ -96,11 +96,17 @@ const applyEntities = (entityMap, entityRanges, text) => {
   }, text);
 };
 
-export default function draftJsToHtml({ blocks, entityMap }) {
+const draftJsToHtml = json => {
+  if (!json) {
+    return ""; //check if input is correct
+  }
+  const { blocks, entityMap } = json;
   if (blocks.length < 1) {
     return ""; //return blank string if no blocks available
   }
   const formattedBlocks = formatBlocks(blocks);
   const article = buildArticle(formattedBlocks, entityMap);
   return jsxToString(article);
-}
+};
+
+export default draftJsToHtml;

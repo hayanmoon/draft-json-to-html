@@ -5,7 +5,9 @@ config = {
   entry: "./index.js",
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "index.js"
+    filename: "index.js",
+    library: "draftJsonToHtml",
+    libraryTarget: "umd"
   },
   module: {
     rules: [{ test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }]
